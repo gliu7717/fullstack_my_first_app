@@ -1,5 +1,6 @@
 import './App.css';
 import React,{useState} from 'react';
+import { Link } from 'react-router-dom';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
@@ -23,8 +24,8 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Routes>
-          
+        <Link to = "/counter">Go to Counter Page</Link>
+        <Routes>         
         <Route path="/"
         element=<HomePage/> />
         <Route path="/counter"
@@ -32,7 +33,6 @@ function App() {
         <Route path="/people-list"
           element = <PeopleListPage/>/>
         </Routes>
-
       </Router>
     </div>
   );
