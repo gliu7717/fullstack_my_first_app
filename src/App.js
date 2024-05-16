@@ -1,6 +1,14 @@
 import './App.css';
 import React,{useState} from 'react';
 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {
+  HomePage,
+  CounterButtonPage,
+  PeopleListPage,
+} from './pages';
+
+
 //import Greeting from './Greeting';
 import {Greeting} from './Greeting';
 import { PeopleList } from './PeopleList';
@@ -14,19 +22,18 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        {hideMessage
-        ? null
-        : <CongratulationsMessage  numberOfClicks = {numberOfClicks} 
-           threshold={10}
-           onHide = {()=>setHideMessage(true)} />
-        }
-         
-        
-        <CounterButton numberOfClicks={numberOfClicks} onIncrement={onIncrement}/>
-        <Greeting name="Gerry" numberofMessages={2} />
+      <Router>
+        <Routes>
+          
+        <Route path="/"
+        element=<HomePage/> />
+        <Route path="/counter"
+          element = <CounterButtonPage/> />
+        <Route path="/people-list"
+          element = <PeopleListPage/>/>
+        </Routes>
 
-      </header>
+      </Router>
     </div>
   );
 }
