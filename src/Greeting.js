@@ -12,6 +12,7 @@ import React from "react";
 //  const {name,numberofMessage} = (props)
 
 export const Greeting = ({name,numberofMessages})=>{
+    console.log("Rendering Greeting...")
     if(!name) return null
     let isMorning = (new Date()).getHours() < 12;
     let greetingHeader = isMorning
