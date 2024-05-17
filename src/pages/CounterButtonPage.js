@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
+
 import { CounterButton } from '../CouterButton';
 import { CongratulationsMessage } from '../CongratulationMessage';
 import { Greeting } from '../Greeting';
@@ -9,9 +11,10 @@ export const CounterButtonPage = () => {
 
   const increment = () => setNumberOfClicks(numberOfClicks + 1);
 
+  const {name} = useParams()
   return (
     <>
-    <h1>The Counter Button Page</h1>
+    <h1> {name}'s The Counter Button Page</h1>
     {hideMessage
         ? null
         : <CongratulationsMessage  numberOfClicks = {numberOfClicks} 

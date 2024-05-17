@@ -28,7 +28,7 @@ function App() {
         <Routes>         
         <Route path="/"
         element=<HomePage/> />
-        <Route path="/counter"
+        <Route path="/counter/:name"
           element = <CounterButtonPage/> />
         <Route path="/people-list"
           element = <PeopleListPage/>/>
