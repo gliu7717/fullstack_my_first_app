@@ -8,6 +8,7 @@ import {
   CounterButtonPage,
   PeopleListPage,
   NotFoundPage,
+  ProtectedPage
 } from './pages';
 
 
@@ -33,6 +34,8 @@ function App() {
           element = <CounterButtonPage/> />
         <Route path="/people-list"
           element = <PeopleListPage/> />
+        <Route path="/protected"
+          element = <ProtectedPage/> />
         <Route path="*"  
           element = <NotFoundPage/> />
         
