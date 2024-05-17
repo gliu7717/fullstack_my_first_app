@@ -9,7 +9,7 @@ import { Greeting } from '../Greeting';
 
 export const CounterButtonPage = () => {
    const location = useLocation()
-   //console.log( parse(location.search))
+   console.log( queryString.parse(location.search))
    const startingValue = queryString.parse(location.search).startingValue
  
   const [numberOfClicks, setNumberOfClicks] = useState(Number(startingValue))

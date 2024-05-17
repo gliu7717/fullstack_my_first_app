@@ -7,6 +7,7 @@ import {
   HomePage,
   CounterButtonPage,
   PeopleListPage,
+  NotFoundPage,
 } from './pages';
 
 
@@ -31,9 +32,12 @@ function App() {
         <Route path="/counter"
           element = <CounterButtonPage/> />
         <Route path="/people-list"
-          element = <PeopleListPage/>/>
+          element = <PeopleListPage/> />
+        <Route path="*"  
+          element = <NotFoundPage/> />
+        
         </Routes>
-      </Router>
+        </Router>
     </div>
   );
 }
