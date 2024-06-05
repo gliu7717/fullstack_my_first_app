@@ -11,23 +11,15 @@ import {
   ControlledFormPage,
   UncontrolledFormPage
 } from './pages';
+import { NavBar } from './NavBar';
 
-
-//import Greeting from './Greeting';
-import {Greeting} from './Greeting';
-import { PeopleList } from './PeopleList';
-import { CounterButton } from './CouterButton';
-import { CongratulationsMessage } from './CongratulationMessage';
 
 function App() {
-  const [numberOfClicks, setNumberofClicks] = useState(0)
-  const [hideMessage, setHideMessage] = useState(false)
-  const onIncrement = () => setNumberofClicks(numberOfClicks + 1)
-
   return (
     <div className="App">
       <Router>
-        <Link to = "/counter">Go to Counter Page</Link>
+        <NavBar />
+        <div className='App-header'>
         <Routes>         
         <Route path="/"
         element=<HomePage/> />
@@ -37,17 +29,17 @@ function App() {
           element = <PeopleListPage/> />
         <Route path="/protected"
           element = <ProtectedPage/> />
-
         <Route path="/controlled"
           element = <ControlledFormPage/> />
         <Route path="/uncontrolled"
           element = <UncontrolledFormPage/> />
-
         <Route path="*"  
           element = <NotFoundPage/> />
-        
         </Routes>
+
+        </div>
         </Router>
+        
     </div>
   );
 }
