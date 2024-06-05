@@ -1,14 +1,14 @@
 import './App.css';
 import React,{useState} from 'react';
 import { Link } from 'react-router-dom';
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
   HomePage,
   CounterButtonPage,
   PeopleListPage,
   NotFoundPage,
-  ProtectedPage
+  ProtectedPage,
+  ControlledFormPage
 } from './pages';
 
 
@@ -36,6 +36,10 @@ function App() {
           element = <PeopleListPage/> />
         <Route path="/protected"
           element = <ProtectedPage/> />
+
+        <Route path="/controlled"
+          element = <ControlledFormPage/> />
+
         <Route path="*"  
           element = <NotFoundPage/> />
         
