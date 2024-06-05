@@ -9,7 +9,8 @@ import {
   NotFoundPage,
   ProtectedPage,
   ControlledFormPage,
-  UncontrolledFormPage
+  UncontrolledFormPage,
+  UserProfilePage
 } from './pages';
 import { NavBar } from './NavBar';
 
@@ -19,6 +20,7 @@ const appLinks = [
   { url: '/people-list', label: 'People List' },
   { url: '/controlled', label: 'Controlled' },
   { url: '/uncontrolled', label: 'Uncontrolled' },
+  { url: '/user', label: 'User Profile' },
 ];
 
 
@@ -41,6 +43,9 @@ function App() {
           element = <ControlledFormPage/> />
         <Route path="/uncontrolled"
           element = <UncontrolledFormPage/> />
+        <Route path="/user"
+          element = <UserProfilePage/> />
+
         <Route path="*"  
           element = <NotFoundPage/> />
         </Routes>
