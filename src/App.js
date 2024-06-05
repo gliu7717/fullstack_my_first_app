@@ -13,12 +13,20 @@ import {
 } from './pages';
 import { NavBar } from './NavBar';
 
+const appLinks = [
+  { url: '/', label: 'Home' },
+  { url: '/counter', label: 'Counter' },
+  { url: '/people-list', label: 'People List' },
+  { url: '/controlled', label: 'Controlled' },
+  { url: '/uncontrolled', label: 'Uncontrolled' },
+];
+
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <NavBar />
+        <NavBar links={appLinks}/>
         <div className='App-header'>
         <Routes>         
         <Route path="/"
