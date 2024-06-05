@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 export const ControlledFormPage = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
-    const [favoriteColor, setFavoriteColor] = useState('');
     return (
         <form>
             <h3>Please enter your information:</h3>

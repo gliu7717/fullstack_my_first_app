@@ -8,7 +8,8 @@ import {
   PeopleListPage,
   NotFoundPage,
   ProtectedPage,
-  ControlledFormPage
+  ControlledFormPage,
+  UncontrolledFormPage
 } from './pages';
 
 
@@ -39,6 +40,8 @@ function App() {
 
         <Route path="/controlled"
           element = <ControlledFormPage/> />
+        <Route path="/uncontrolled"
+          element = <UncontrolledFormPage/> />
 
         <Route path="*"  
           element = <NotFoundPage/> />
