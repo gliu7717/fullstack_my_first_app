@@ -1,21 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
-import queryString from 'query-string';
-
 import { CounterButton } from '../CouterButton';
 import { CongratulationsMessage } from '../CongratulationMessage';
 import { Greeting } from '../Greeting';
 import { DisplayIf } from '../DisplayIf';
+import userEvent from '@testing-library/user-event';
 
 export const CounterButtonPage = () => {
-  const location = useLocation()
-  console.log( queryString.parse(location.search))
-  var startingValue = queryString.parse(location.search).startingValue
-  console.log(startingValue)    
-  if(!startingValue)  startingValue = 0
-  const [numberOfClicks, setNumberOfClicks] = useState(Number(startingValue))
+  const [numberOfClicks, setNumberOfClicks] = useState(
+    Number(localStorage.getItem('numberOfClicks')) || 0
+  )
   const [hideMessage, setHideMessage] = useState(false);
+  useEffect(()=>{
+    localStorage.setItem('numberOfClicks', numberOfClicks)
+  },[numberOfClicks])
 
   const increment = () => setNumberOfClicks(numberOfClicks + 1);
 
