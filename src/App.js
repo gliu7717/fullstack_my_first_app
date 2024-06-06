@@ -13,6 +13,7 @@ import {
   UserProfilePage
 } from './pages';
 import { NavBar } from './NavBar';
+import { ThemeContext } from './ThemeContext';
 
 const appLinks = [
   { url: '/', label: 'Home' },
@@ -23,9 +24,11 @@ const appLinks = [
   { url: '/user', label: 'User Profile' },
 ];
 
+const theme = 'light'
 
 function App() {
   return (
+    <ThemeContext.Provider value="light">
     <div className="App">
       <Router>
         <NavBar links={appLinks}/>
@@ -51,9 +54,9 @@ function App() {
         </Routes>
 
         </div>
-        </Router>
-        
-    </div>
+        </Router>        
+      </div>
+    </ThemeContext.Provider>  
   );
 }
 
